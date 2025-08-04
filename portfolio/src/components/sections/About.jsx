@@ -111,30 +111,19 @@ export const About = () => {
               <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
               <div className="space-y-4 text-gray-300">
                 <div>
-                  <h4 className="font-semibold">
+                  <h4 className="font-bold">
                     {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
+                   Software Developer @ RESTech (2024 - Present){" "}
                   </h4>
-                  <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                   Software Developer @ RESTech (2024-Present){" "}
-                  </h4>
-                  <p>
-                  - System design and frontend development for ace-portfolio
-                  </p>
-                  <p>
-                  -  Developed landing page for Podcast Shorts by Rat@Studios
-                  </p>
-                  <p>
-                  -  Conducted UI/UX design and research on multiple small projects
-                  </p>
+                  <li>
+                  System design and frontend development for ace-portfolio
+                  </li>
+                  <li>
+                  Developed landing page for Podcast Shorts by Rat@Studios
+                  </li>
+                  <li>
+                  Conducted UI/UX design and research on multiple small projects
+                  </li>
                 </div>
               </div>
             </div>
