@@ -74,7 +74,7 @@ export const About = () => {
               <div
                 key={skill.title}
                 className={`
-                  rounded-xl p-6 border-2 border-emerald-300 flex flex-col bg-black
+                  rounded-xl p-6 border-2 border-emerald-700 flex flex-col bg-black
                   shadow transition-all duration-200 min-h-[225px]
                   hover:shadow-[0_0_20px_2px_#6ee7b7] hover:scale-105
                   focus-within:shadow-[0_0_20px_2px_#6ee7b7] focus-within:scale-105
@@ -102,7 +102,7 @@ export const About = () => {
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch mt-10">
             <div
               className={`
-                flex-1 rounded-xl py-6 px-7 border-2 border-emerald-300 flex flex-col shadow
+                flex-1 rounded-xl py-6 px-7 border-2 border-emerald-700 flex flex-col shadow
                 bg-black transition-all duration-200 min-h-[215px]
                 hover:shadow-[0_0_28px_2px_#10b981cc] hover:scale-[1.04]
                 focus-within:shadow-[0_0_28px_2px_#10b981cc] focus-within:scale-[1.04]
@@ -124,7 +124,7 @@ export const About = () => {
             </div>
             <div
               className={`
-                flex-1 rounded-xl py-6 px-7 border-2 border-emerald-300 flex flex-col shadow
+                flex-1 rounded-xl py-6 px-7 border-2 border-emerald-700 flex flex-col shadow
                 bg-black transition-all duration-200 min-h-[215px]
                 hover:shadow-[0_0_28px_2px_#10b981cc] hover:scale-[1.04]
                 focus-within:shadow-[0_0_28px_2px_#10b981cc] focus-within:scale-[1.04]
