@@ -124,11 +124,16 @@ export const About = () => {
                 <div>
                   <h4 className="font-semibold">
                     {" "}
-                    Intern at DEF Startups (2019){" "}
+                   Software Developer @ RESTech (2024-Present){" "}
                   </h4>
                   <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
+                  - System design and frontend development for ace-portfolio
+                  </p>
+                  <p>
+                  -  Developed landing page for Podcast Shorts by Rat@Studios
+                  </p>
+                  <p>
+                  -  Conducted UI/UX design and research on multiple small projects
                   </p>
                 </div>
               </div>
