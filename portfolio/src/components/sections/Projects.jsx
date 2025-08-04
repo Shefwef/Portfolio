@@ -1,164 +1,99 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import React from "react";
 
-export const Projects = () => {
-  return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
-      <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent text-center">
-            {" "}
-            Featured Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-green-500/30 hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)] transition">
-              <h3 className="text-xl font-bold mb-2"> Campus Buy</h3>
-              <p className="text-gray-400 mb-4">
-                MERN stack student marketplace featuring AI integration for smarter buying/selling and Chatbase API-driven chat.
+const projects = [
+  {
+    name: "Campus Buy",
+    description:
+      "MERN stack student marketplace featuring AI integration for smarter buying/selling and Chatbase API-driven chat.",
+    tech: ["React", "Node.js", "MongoDB", "Chatbase", "Render"],
+    link: "https://github.com/Shefwef/Campus-Buy",
+  },
+  {
+    name: "KrishokBondhu",
+    description:
+      "AI & ML-powered agriculture platform for crop recommendations, fertilizer suggestions, and plant disease detection.",
+    tech: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "Clerk",
+      "TensorFlow",
+      "Scikit-learn",
+      "Cloudinary",
+    ],
+    link: "https://github.com/Shefwef/KrishokBondhu",
+  },
+  {
+    name: "BlockFunder",
+    description:
+      "MERN & Solidity-based platform for blockchain crowdfunding, with Figma design, chatbot, and BotPress integration.",
+    tech: ["Node.js", "JavaScript", "Blockchain", "Solidity", "BotPress"],
+    link: "https://github.com/Shefwef/BlockFunder",
+  },
+  {
+    name: "Talkster",
+    description:
+      "Real-time MERN chat app with Socket.io and JWT authentication.",
+    tech: ["Socket.IO", "JWT", "Express", "React", "Node.js", "MongoDB"],
+    link: "https://github.com/Shefwef/Talkster",
+  },
+];
+
+export const Projects = () => (
+  <section
+    id="projects"
+    className="min-h-screen flex items-center justify-center py-20 bg-transparent"
+  >
+    <RevealOnScroll>
+      <div className="max-w-5xl mx-auto px-4">
+        <h2 className="text-3xl font-extrabold mb-10 bg-green-400 bg-clip-text text-transparent text-center">
+          Featured Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project) => (
+            <div
+              key={project.name}
+              className={`
+                rounded-xl p-6 bg-black min-h-[245px]
+                shadow transition-all duration-200
+                hover:shadow-[0_0_24px_2px_#22c55e55] hover:scale-105
+                focus-within:shadow-[0_0_24px_2px_#22c55e55] focus-within:scale-105
+              `}
+              tabIndex={0}
+            >
+              <h3 className="text-xl font-semibold text-green-400 mb-5 text-center tracking-wide">
+                {project.name}
+              </h3>
+              <p className="text-gray-400 mb-6 text-left">
+                {project.description}
               </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "MongoDB", "Chatbase", "Render"].map((tech, key) => (
+              <div className="flex flex-wrap justify-center gap-2 w-full mb-4 mt-2">
+                {project.tech.map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-green-500/10 text-green-500 py-1 px-3 rounded-full text-sm hover:bg-green-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(34,197,94,0.1)] transition-all
-                    "
+                    className="text-emerald-300 bg-emerald-800/10 py-1 px-3 rounded-full text-sm font-medium border border-emerald-900/20 transition hover:scale-105 hover:bg-emerald-500/20 hover:text-emerald-300"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-
-              <div className="flex justify-between items-center">
+              <div className="flex justify-end items-center mt-auto">
                 <a
-                  href="#"
-                  className="text-green-500 hover:text-green-300 transition-colors my-4"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-300 hover:text-emerald-300 font-semibold transition-colors text-base"
                 >
                   View Project →
                 </a>
               </div>
             </div>
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-green-500/30
-              hover:shadow-[0_4px_20px_rgba(34,197,94,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">KrishokBondhu</h3>
-              <p className="text-gray-400 mb-4">
-               AI & ML-powered agriculture platform for crop recommendations, fertilizer suggestions, and plant disease detection.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Next.js", "TypeScript", "FastAPI", "Python", "Clerk", "TensorFlow", "Scikit-learn", "Cloudinary"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="
-                      bg-green-500/10 text-green-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-green-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)]
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-green-500 hover:text-green-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-green-500/30
-              hover:shadow-[0_4px_20px_rgba(34,197,94,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">BlockFunder</h3>
-              <p className="text-gray-400 mb-4">
-                MERN & Solidity-based platform for blockchain crowdfunding, with Figma design, chatbot, and BotPress integration.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Node.js", "JavaScript", "Blockchain", "Solidity", "BotPress"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="
-                      bg-green-500/10 text-green-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-green-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)]
-                    "
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-green-500 hover:text-green-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-green-500/30
-              hover:shadow-[0_4px_20px_rgba(34,197,94,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">Talkster</h3>
-              <p className="text-gray-400 mb-4">
-                Real-time MERN chat app with Socket.io and JWT authentication.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Socket.IO", "JWT", "Express", "React", "Node.js", "MongoDB"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="
-                      bg-green-500/10 text-green-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-green-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)]
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center ">
-                <a
-                  href="#"
-                  className="text-green-500 hover:text-green-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </RevealOnScroll>
-    </section>
-  );
-};
+      </div>
+    </RevealOnScroll>
+  </section>
+);
