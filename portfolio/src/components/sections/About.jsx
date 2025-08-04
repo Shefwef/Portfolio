@@ -2,128 +2,150 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import React from "react";
 
 export const About = () => {
-  const languages = [
-   "C", "C++", "C#", "Python", "Java", "JavaScript", "TypeScript", "HTML", "CSS", "Solidity"
+  const skills = [
+    {
+      title: "Languages",
+      items: [
+        "C",
+        "C++",
+        "C#",
+        "Python",
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Solidity",
+      ],
+    },
+    {
+      title: "Frameworks & Libraries",
+      items: [
+        "React",
+        "Node.js",
+        "Next.js",
+        "Express.js",
+        "FastAPI",
+        "NumPy",
+        "Scikit-learn",
+        "TensorFlow",
+      ],
+    },
+    {
+      title: "Cloud & DevOps",
+      items: [
+        "Git",
+        "GitHub",
+        "Render",
+        "Vercel",
+        "Docker",
+        "AWS",
+        "Azure",
+        "Postman",
+        "SwaggerUI",
+      ],
+    },
+    {
+      title: "Design & Dev Tools",
+      items: ["Figma", "Canva", "Adobe Photoshop", "WordPress", "BotPress"],
+    },
   ];
-
-  const frameworks = ["React", "Node.js", "Next.js", "Express.js", "FastAPI", "NumPy"," Scikit-learn", "Tensor-Flow"];
-
-  const cloudDevOps = ["Git", "GitHub", "Render", "Vercel", "Docker", "AWS", "Azure", "Postman", "SwaggerUI"];
-
-  const designTools = ["Figma", "Canva", "Adobe Photoshop"];
-
-  const developmentTools = ["WordPress", "BotPress"];
 
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="min-h-screen flex items-center justify-center py-20 bg-transparent"
     >
       <RevealOnScroll>
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent text-center">
-            {" "}
+        <div className="max-w-3xl mx-auto px-4 w-full">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-10 bg-green-400 bg-clip-text text-transparent text-center">
             About Me
           </h2>
+          <p className="text-base md:text-lg text-gray-300 text-center max-w-2xl mx-auto mb-12">
+            I’m a software engineering undergrad passionate about full-stack
+            development, AI, and cloud solutions. I focus on clean, scalable
+            code and building user-centric products. I love turning ideas into
+            reality, exploring new tech, and collaborating in dynamic teams.
+          </p>
 
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
-              A software engineering undergrad passionate about full-stack development, AI, and cloud solutions. I focus on clean, scalable code and user experience, turning ideas into high-impact digital solutions. I enjoy tackling real-time apps, experimenting with new technologies, and collaborating in great teams.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Proficient Languages</h3>
-                <div className="flex flex-wrap gap-2">
-                  {languages.map((tech, key) => (
+          {/* Skills Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-16">
+            {skills.map((skill) => (
+              <div
+                key={skill.title}
+                className={`
+                  rounded-xl p-6 border-2 border-emerald-300 flex flex-col bg-black
+                  shadow transition-all duration-200 min-h-[225px]
+                  hover:shadow-[0_0_20px_2px_#6ee7b7] hover:scale-105
+                  focus-within:shadow-[0_0_20px_2px_#6ee7b7] focus-within:scale-105
+                `}
+                tabIndex={0}
+              >
+                <h3 className="font-semibold text-lg text-green-400 mb-6 text-center tracking-wide">
+                  {skill.title}
+                </h3>
+                <div className="flex flex-wrap justify-center gap-2 w-full mt-2">
+                  {skill.items.map((item, key) => (
                     <span
                       key={key}
-                                             className="bg-green-500/10 text-green-500 py-1 px-3 rounded-full text-sm hover:bg-green-500/20 
-                                     hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)] transition
-                    "
+                      className="bg-emerald-800/20 text-white py-1 px-3 rounded-full text-sm font-medium border border-emerald-900/30 transition hover:scale-105 hover:bg-green-800/40"
                     >
-                      {tech}
+                      {item}
                     </span>
                   ))}
                 </div>
               </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Frameworks & Libraries</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frameworks.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-green-500/10 text-green-500 py-1 px-3 rounded-full text-sm hover:bg-green-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Cloud & DevOps</h3>
-                <div className="flex flex-wrap gap-2">
-                  {cloudDevOps.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-green-500/10 text-green-500 py-1 px-3 rounded-full text-sm hover:bg-green-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Design & Development Tools</h3>
-                <div className="flex flex-wrap gap-2">
-                  {[...designTools, ...developmentTools].map((tool, key) => (
-                    <span
-                      key={key}
-                      className="bg-green-500/10 text-green-500 py-1 px-3 rounded-full text-sm hover:bg-green-500/20 
-                                hover:shadow-[0_2px_8px_rgba(34,197,94,0.2)] transition
-                      "
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+          {/* Education & Work Section */}
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch mt-10">
+            <div
+              className={`
+                flex-1 rounded-xl py-6 px-7 border-2 border-emerald-300 flex flex-col shadow
+                bg-black transition-all duration-200 min-h-[215px]
+                hover:shadow-[0_0_28px_2px_#10b981cc] hover:scale-[1.04]
+                focus-within:shadow-[0_0_28px_2px_#10b981cc] focus-within:scale-[1.04]
+              `}
+              tabIndex={0}
+            >
+              <h3 className="text-xl font-semibold text-green-400 mb-3 flex items-center gap-2">
+                Education
+              </h3>
+              <ul className="text-gray-200 space-y-2 text-base">
                 <li>
-                  <strong> B.Sc in Software Engineering </strong> - Islamic University of Technology (3rd Year)
+                  <span className="font-bold">
+                    B.Sc in Software Engineering
+                  </span>
+                  <br />
+                  Islamic University of Technology (2022 – Present)
                 </li>
               </ul>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
+            <div
+              className={`
+                flex-1 rounded-xl py-6 px-7 border-2 border-emerald-300 flex flex-col shadow
+                bg-black transition-all duration-200 min-h-[215px]
+                hover:shadow-[0_0_28px_2px_#10b981cc] hover:scale-[1.04]
+                focus-within:shadow-[0_0_28px_2px_#10b981cc] focus-within:scale-[1.04]
+              `}
+              tabIndex={0}
+            >
+              <h3 className="text-xl font-semibold text-green-400 mb-3 flex items-center gap-2">
+                Work Experience
+              </h3>
+              <div className="text-gray-200 space-y-2 text-base">
                 <div>
-                  <h4 className="font-bold">
-                    {" "}
-                   Software Developer @ RESTech (2024 - Present){" "}
-                  </h4>
-                  <li>
-                  System design and frontend development for ace-portfolio
-                  </li>
-                  <li>
-                  Developed landing page for Podcast Shorts by Rat@Studios
-                  </li>
-                  <li>
-                  Conducted UI/UX design and research on multiple small projects
-                  </li>
+                  <span className="font-bold">
+                    Software Developer @ RES Tech
+                  </span>
+                  <br />
+                  <span className="text-sm text-gray-400">2024 – Present</span>
+                  <ul className="list-disc list-inside pl-4 mt-1 space-y-1">
+                    <li>System design & frontend for ace-portfolio</li>
+                    <li>Landing page dev for Podcast Shorts (Rat@Studios)</li>
+                    <li>UI/UX and research on multiple projects</li>
+                  </ul>
                 </div>
               </div>
             </div>
