@@ -49,43 +49,47 @@ export const Projects = () => (
   >
     <RevealOnScroll>
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-3xl font-extrabold mb-10 bg-green-400 bg-clip-text text-transparent text-center">
+        <h2 className="text-4xl font-extrabold mb-14 bg-green-400 bg-clip-text text-transparent text-center">
           Featured Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map((project) => (
             <div
               key={project.name}
               className={`
-                rounded-xl p-6 bg-black min-h-[245px]
-                shadow transition-all duration-200
-                hover:shadow-[0_0_24px_2px_#22c55e55] hover:scale-105
-                focus-within:shadow-[0_0_24px_2px_#22c55e55] focus-within:scale-105
+                flex flex-col justify-between h-full rounded-2xl p-7 bg-black
+                shadow-md transition-all duration-200
+                hover:scale-[1.025] hover:shadow-[0_0_20px_0_#22c55e33]
+                border border-[#232a22] 
               `}
               tabIndex={0}
             >
-              <h3 className="text-xl font-semibold text-green-400 mb-5 text-center tracking-wide">
-                {project.name}
-              </h3>
-              <p className="text-gray-400 mb-6 text-left">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 w-full mb-4 mt-2">
-                {project.tech.map((tech, key) => (
-                  <span
-                    key={key}
-                    className="text-emerald-300 bg-emerald-800/10 py-1 px-3 rounded-full text-sm font-medium border border-emerald-900/20 transition hover:scale-105 hover:bg-emerald-500/20 hover:text-emerald-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              {/* Header */}
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-green-400 mb-3 text-left">
+                  {project.name}
+                </h3>
+                <p className="text-gray-300 mb-7 text-left leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 w-full mb-4">
+                  {project.tech.map((tech, key) => (
+                    <span
+                      key={key}
+                      className="bg-emerald-900/40 text-green-300 py-1.5 px-3 rounded-full text-xs font-semibold border border-emerald-800/40 transition-colors duration-100 hover:bg-emerald-700/40 hover:text-white"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex justify-end items-center mt-auto">
+              {/* Footer link */}
+              <div className="flex justify-end mt-2">
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-300 hover:text-emerald-300 font-semibold transition-colors text-base"
+                  className="text-green-400 hover:text-green-300 font-semibold transition-colors text-base underline underline-offset-4"
                 >
                   View Project →
                 </a>
