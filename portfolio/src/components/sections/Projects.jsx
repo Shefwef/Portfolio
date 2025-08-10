@@ -3,11 +3,18 @@ import React from "react";
 
 const projects = [
   {
-    name: "Campus Buy",
+    name: "Ghuroo",
     description:
-      "MERN stack student marketplace featuring AI integration for smarter buying/selling and Chatbase API-driven chat.",
-    tech: ["React", "Node.js", "MongoDB", "Chatbase", "Render"],
-    link: "https://github.com/Shefwef/Campus-Buy",
+      "A travel platform designed to offer curated tour experiences, authentic reviews, and seamless booking for travel enthusiasts.",
+    tech: [
+      "React JS",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "Supabase",
+      "Firebase",
+    ],
+    link: "https://github.com/Shefwef/ghuroo.git",
   },
   {
     name: "KrishokBondhu",
@@ -24,21 +31,21 @@ const projects = [
       "Scikit-learn",
       "Cloudinary",
     ],
-    link: "https://github.com/Shefwef/KrishokBondhu",
+    link: "https://github.com/Shefwef/KrishokBondhu.git",
   },
   {
     name: "BlockFunder",
     description:
       "MERN & Solidity-based platform for blockchain crowdfunding, with Figma design, chatbot, and BotPress integration.",
     tech: ["Node.js", "JavaScript", "Blockchain", "Solidity", "BotPress"],
-    link: "https://github.com/Shefwef/BlockFunder",
+    link: "https://github.com/Shefwef/KUET_IntelliJ.git",
   },
   {
     name: "Talkster",
     description:
       "Real-time MERN chat app with Socket.io and JWT authentication.",
     tech: ["Socket.IO", "JWT", "Express", "React", "Node.js", "MongoDB"],
-    link: "https://github.com/Shefwef/Talkster",
+    link: "https://github.com/Shefwef/Talkster_Chat-App.git",
   },
 ];
 
@@ -58,13 +65,13 @@ export const Projects = () => (
               key={project.name}
               className={`
                 flex flex-col justify-between h-full rounded-2xl p-7 bg-black
-                shadow-md transition-all duration-200
-                hover:scale-[1.025] hover:shadow-[0_0_20px_0_#22c55e33]
+                shadow-md transition-all duration-300
+                hover:scale-[1.03] hover:shadow-[0_0_20px_0_#22c55e33]
                 border border-[#232a22] 
               `}
               tabIndex={0}
             >
-              {/* Header */}
+              {/* Project Header */}
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-green-400 mb-3 text-left">
                   {project.name}
@@ -83,7 +90,8 @@ export const Projects = () => (
                   ))}
                 </div>
               </div>
-              {/* Footer link */}
+
+              {/* Footer Link */}
               <div className="flex justify-end mt-2">
                 <a
                   href={project.link}
