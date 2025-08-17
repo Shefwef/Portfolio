@@ -70,6 +70,7 @@ const skills = [
     color: "from-emerald-400 to-teal-500",
     items: [
       { name: "React", icon: SiReact, color: "#61dafb" },
+      { name: "React Native", icon: SiReact, color: "#61dafb" },
       { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
       { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
       { name: "Express.js", icon: FaServer, color: "#000000" },
@@ -109,77 +110,77 @@ const skills = [
 
 const certificates = [
   {
-    title: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    date: "2024",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
-    skills: ["JavaScript", "Algorithms", "Data Structures"]
+    title: "Artificial Intelligence Essentials V2",
+    issuer: "IBM via Coursera",
+    date: "2025",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+    skills: ["Artificial Intelligence (AI)", "Generative AI", "Natural Language Processing (NLP)"]
   },
   {
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    date: "2023",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
-    skills: ["HTML", "CSS", "Responsive Design"]
-  },
-  {
-    title: "Front End Development Libraries",
-    issuer: "freeCodeCamp",
-    date: "2023",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop",
-    skills: ["React", "Redux", "Bootstrap"]
-  },
-  {
-    title: "Back End Development and APIs",
-    issuer: "freeCodeCamp",
-    date: "2023",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-    skills: ["Node.js", "Express", "MongoDB"]
-  },
-  {
-    title: "Machine Learning with Python",
-    issuer: "freeCodeCamp",
-    date: "2024",
+    title: "Supervised Machine Learning: Regression and Classification",
+    issuer: "DeepLearning.AI & Stanford University via Coursera",
+    date: "2025",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop",
-    skills: ["Python", "TensorFlow", "Neural Networks"]
+    skills: ["Scikit-Learn", "NumPy", "Supervised Learning", "Unsupervised Learning", "Regression Analysis", "CART", "Statistical Modeling", "Predictive Modeling", "Jupyter"]
   },
   {
-    title: "Data Analysis with Python",
-    issuer: "freeCodeCamp",
-    date: "2023",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-    skills: ["Pandas", "NumPy", "Matplotlib"]
+    title: "Introduction to Docker",
+    issuer: "Google Cloud via Coursera",
+    date: "2025",
+    image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&h=300&fit=crop",
+    skills: ["Containerization", "Google Cloud Platform (GCP)", "DevOps", "Docker"]
+  },
+  {
+    title: "Microsoft Learn Student Ambassador",
+    issuer: "Microsoft Learn",
+    date: "2024",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop",
+    skills: ["Web Development", "Visual Studio Code", "GitHub Pages"]
+  },
+  {
+    title: "Tech Trends for Advancing Bangladesh",
+    issuer: "Grameenphone Academy",
+    date: "2024",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
+    skills: ["Technology Trends", "Digital Innovation", "Bangladesh Tech Ecosystem"]
   }
 ];
 
 const achievements = [
   {
-    title: "Best Innovation Award",
-    description: "Awarded for developing KrishokBondhu - AI-powered agriculture platform",
+    title: "UIU Blockchain Olympiad 2025 – Finalist",
+    description: "Reached the finals in the prestigious blockchain competition at United International University",
     icon: FaTrophy,
     color: "from-yellow-400 to-orange-500",
-    year: "2024"
+    year: "2025"
   },
   {
-    title: "Hackathon Winner",
-    description: "1st place in National Blockchain Hackathon for BlockFunder project",
+    title: "CodeRush 3.0 Hackathon – Top 10",
+    description: "Secured position in Top 10 and advanced to the Presentation Round",
     icon: FaMedal,
     color: "from-purple-400 to-pink-500",
     year: "2024"
   },
   {
-    title: "Open Source Contributor",
-    description: "Active contributor to multiple open-source projects with 100+ contributions",
+    title: "CodeRush 2.0 Hackathon – 11th Place",
+    description: "Achieved 11th place overall and 2nd among Freshman Teams",
     icon: FaAward,
     color: "from-green-400 to-blue-500",
-    year: "2023-2024"
+    year: "2023"
   },
   {
-    title: "Dean's List",
-    description: "Academic excellence recognition for maintaining high CGPA",
+    title: "MindSparks23 Business Case Competition – Finalist",
+    description: "Reached the finals in the business case competition showcasing strategic thinking",
     icon: FaStar,
     color: "from-indigo-400 to-purple-500",
     year: "2023"
+  },
+  {
+    title: "UIU English Olympiad – Top 30",
+    description: "Secured position in Top 30 in the English language proficiency competition",
+    icon: FaCertificate,
+    color: "from-blue-400 to-cyan-500",
+    year: "2021"
   }
 ];
 
@@ -487,9 +488,6 @@ export const About = () => {
                 sub: "Islamic University of Technology",
                 period: "2022 – Present",
                 list: [
-                  "CGPA: 3.46/4.00 (Till 5th Semester)",
-                  "Relevant Coursework: Data Structures, AI, Web Development, Cloud Computing",
-                  "Active member of programming and tech communities",
                 ],
                 color: "from-blue-400 to-purple-500",
               },
