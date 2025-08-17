@@ -8,7 +8,9 @@ import {
   FaGithub,
   FaDownload,
   FaArrowDown,
+  FaCode,
 } from "react-icons/fa";
+import { SiLeetcode, SiCodeforces } from "react-icons/si";
 
 const phrases = [
   "Full-stack Software Developer",
@@ -175,30 +177,46 @@ export const Home = () => {
 
           {/* Social Icons */}
           <motion.div 
-            className="flex justify-center gap-4 mb-10"
+            className="flex justify-center gap-4 mb-10 flex-wrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
             <SocialIcon
-              href="https://facebook.com/YOUR_FACEBOOK"
-              label="Facebook"
-              Icon={FaFacebookF}
+              href="https://github.com/Shefwef"
+              label="GitHub"
+              Icon={FaGithub}
+              color="#333"
             />
             <SocialIcon
-              href="https://instagram.com/YOUR_INSTAGRAM"
-              label="Instagram"
-              Icon={FaInstagram}
+              href="https://leetcode.com/u/Shefwef/"
+              label="LeetCode"
+              Icon={SiLeetcode}
+              color="#FFA116"
+            />
+            <SocialIcon
+              href="https://codeforces.com/profile/Shefayat101"
+              label="Codeforces"
+              Icon={SiCodeforces}
+              color="#1F8ACB"
             />
             <SocialIcon
               href="https://linkedin.com/in/YOUR_LINKEDIN"
               label="LinkedIn"
               Icon={FaLinkedinIn}
+              color="#0077B5"
             />
             <SocialIcon
-              href="https://github.com/Shefwef"
-              label="GitHub"
-              Icon={FaGithub}
+              href="https://facebook.com/YOUR_FACEBOOK"
+              label="Facebook"
+              Icon={FaFacebookF}
+              color="#1877F2"
+            />
+            <SocialIcon
+              href="https://instagram.com/YOUR_INSTAGRAM"
+              label="Instagram"
+              Icon={FaInstagram}
+              color="#E4405F"
             />
           </motion.div>
 
@@ -285,7 +303,7 @@ export const Home = () => {
 };
 
 // Enhanced social icon with advanced animations
-const SocialIcon = ({ href, label, Icon }) => (
+const SocialIcon = ({ href, label, Icon, color = "#10b981" }) => (
   <motion.a
     href={href}
     target="_blank"
@@ -294,8 +312,8 @@ const SocialIcon = ({ href, label, Icon }) => (
     aria-label={label}
     whileHover={{ 
       scale: 1.2, 
-      boxShadow: "0 0 20px rgba(16, 185, 129, 0.6)",
-      backgroundColor: "rgba(16, 185, 129, 0.1)"
+      boxShadow: `0 0 25px ${color}40`,
+      backgroundColor: `${color}15`
     }}
     whileTap={{ scale: 0.9 }}
     initial={{ opacity: 0, y: 20 }}
@@ -303,17 +321,33 @@ const SocialIcon = ({ href, label, Icon }) => (
     transition={{ delay: 1.2 }}
   >
     <motion.div
-      className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full"
-      initial={{ scale: 0 }}
-      whileHover={{ scale: 1 }}
+      className="absolute inset-0 rounded-full"
+      style={{ backgroundColor: color }}
+      initial={{ scale: 0, opacity: 0 }}
+      whileHover={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.3 }}
     />
     <motion.div
-      className="relative z-10 group-hover:text-black transition-colors duration-300"
-      whileHover={{ rotate: 360 }}
+      className="relative z-10 transition-colors duration-300"
+      style={{ color: 'inherit' }}
+      whileHover={{ 
+        rotate: 360,
+        color: label === 'GitHub' ? '#fff' : '#000'
+      }}
       transition={{ duration: 0.6 }}
     >
       <Icon size={20} />
+    </motion.div>
+    
+    {/* Tooltip */}
+    <motion.div
+      className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-xs font-medium shadow-xl border border-gray-700 opacity-0 group-hover:opacity-100 pointer-events-none z-20"
+      initial={{ y: 10, opacity: 0 }}
+      whileHover={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
+      {label}
+      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
     </motion.div>
   </motion.a>
 );
