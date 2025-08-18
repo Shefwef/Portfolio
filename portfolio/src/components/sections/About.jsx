@@ -1,12 +1,12 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  FaGraduationCap, 
-  FaBriefcase, 
-  FaCode, 
-  FaCloud, 
-  FaPalette, 
+import {
+  FaGraduationCap,
+  FaBriefcase,
+  FaCode,
+  FaCloud,
+  FaPalette,
   FaTools,
   FaCertificate,
   FaTrophy,
@@ -29,7 +29,7 @@ import {
   FaLaptopCode,
   FaMicrochip,
   FaRocket,
-  FaShieldAlt
+  FaShieldAlt,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -44,7 +44,7 @@ import {
   SiDocker,
   SiVercel,
   SiFigma,
-  SiWordpress
+  SiWordpress,
 } from "react-icons/si";
 
 const skills = [
@@ -113,75 +113,102 @@ const certificates = [
     title: "Artificial Intelligence Essentials V2",
     issuer: "IBM via Coursera",
     date: "2025",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-    skills: ["Artificial Intelligence (AI)", "Generative AI", "Natural Language Processing (NLP)"]
+    image: "/Coursera_AI-1.png",
+    skills: [
+      "Artificial Intelligence (AI)",
+      "Generative AI",
+      "Natural Language Processing (NLP)",
+    ],
   },
   {
     title: "Supervised Machine Learning: Regression and Classification",
     issuer: "DeepLearning.AI & Stanford University via Coursera",
     date: "2025",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop",
-    skills: ["Scikit-Learn", "NumPy", "Supervised Learning", "Unsupervised Learning", "Regression Analysis", "CART", "Statistical Modeling", "Predictive Modeling", "Jupyter"]
+    image: "/Coursera_ML-RnC-1.png",
+    skills: [
+      "Scikit-Learn",
+      "NumPy",
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Regression Analysis",
+      "CART",
+      "Statistical Modeling",
+      "Predictive Modeling",
+      "Jupyter",
+    ],
   },
   {
     title: "Introduction to Docker",
     issuer: "Google Cloud via Coursera",
     date: "2025",
-    image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&h=300&fit=crop",
-    skills: ["Containerization", "Google Cloud Platform (GCP)", "DevOps", "Docker"]
+    image: "/Coursera_Docker-1.png",
+    skills: [
+      "Containerization",
+      "Google Cloud Platform (GCP)",
+      "DevOps",
+      "Docker",
+    ],
   },
   {
     title: "Microsoft Learn Student Ambassador",
     issuer: "Microsoft Learn",
     date: "2024",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop",
-    skills: ["Web Development", "Visual Studio Code", "GitHub Pages"]
+    image: "/Event Certificate-1.png",
+    skills: ["Web Development", "Visual Studio Code", "GitHub Pages"],
   },
   {
     title: "Tech Trends for Advancing Bangladesh",
     issuer: "Grameenphone Academy",
     date: "2024",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
-    skills: ["Technology Trends", "Digital Innovation", "Bangladesh Tech Ecosystem"]
-  }
+    image: "/GP.png",
+    skills: [
+      "Technology Trends",
+      "Digital Innovation",
+      "Bangladesh Tech Ecosystem",
+    ],
+  },
 ];
 
 const achievements = [
   {
     title: "UIU Blockchain Olympiad 2025 – Finalist",
-    description: "Reached the finals in the prestigious blockchain competition at United International University",
+    description:
+      "Reached the finals in the prestigious blockchain competition at United International University",
     icon: FaTrophy,
     color: "from-yellow-400 to-orange-500",
-    year: "2025"
+    year: "2025",
   },
   {
     title: "CodeRush 3.0 Hackathon – Top 10",
-    description: "Secured position in Top 10 and advanced to the Presentation Round",
+    description:
+      "Secured position in Top 10 and advanced to the Presentation Round",
     icon: FaMedal,
     color: "from-purple-400 to-pink-500",
-    year: "2024"
+    year: "2024",
   },
   {
     title: "CodeRush 2.0 Hackathon – 11th Place",
     description: "Achieved 11th place overall and 2nd among Freshman Teams",
     icon: FaAward,
     color: "from-green-400 to-blue-500",
-    year: "2023"
+    year: "2023",
   },
   {
     title: "MindSparks23 Business Case Competition – Finalist",
-    description: "Reached the finals in the business case competition showcasing strategic thinking",
+    description:
+      "Reached the finals in the business case competition showcasing strategic thinking",
     icon: FaStar,
     color: "from-indigo-400 to-purple-500",
-    year: "2023"
+    year: "2023",
   },
   {
     title: "UIU English Olympiad – Top 30",
-    description: "Secured position in Top 30 in the English language proficiency competition",
+    description:
+      "Secured position in Top 30 in the English language proficiency competition",
     icon: FaCertificate,
     color: "from-blue-400 to-cyan-500",
-    year: "2021"
-  }
+    year: "2021",
+  },
 ];
 
 export const About = () => {
@@ -195,7 +222,7 @@ export const About = () => {
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/5 via-transparent to-transparent"></div>
-      
+
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
           <motion.div
@@ -215,14 +242,15 @@ export const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 I'm a{" "}
-                <motion.span 
+                <motion.span
                   className="text-emerald-400 font-semibold"
                   whileHover={{ scale: 1.05 }}
                 >
                   software engineering undergraduate
-                </motion.span>
-                {" "}passionate about full-stack development, AI, and cloud solutions. 
-                I focus on clean, scalable code and building user-centric products.
+                </motion.span>{" "}
+                passionate about full-stack development, AI, and cloud
+                solutions. I focus on clean, scalable code and building
+                user-centric products.
               </motion.p>
               <motion.p
                 className="text-gray-400 leading-relaxed"
@@ -230,8 +258,9 @@ export const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                I love turning innovative ideas into reality, exploring cutting-edge technologies, 
-                and collaborating with dynamic teams to create impactful solutions.
+                I love turning innovative ideas into reality, exploring
+                cutting-edge technologies, and collaborating with dynamic teams
+                to create impactful solutions.
               </motion.p>
             </div>
           </motion.div>
@@ -246,7 +275,7 @@ export const About = () => {
             >
               Technical Skills
             </motion.h3>
-            
+
             {/* Skill Category Tabs */}
             <div className="flex flex-wrap justify-center mb-8 gap-2">
               {skills.map((skill, index) => {
@@ -257,8 +286,8 @@ export const About = () => {
                     onClick={() => setActiveSkill(index)}
                     className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                       activeSkill === index
-                        ? 'bg-emerald-500 text-black shadow-lg'
-                        : 'glass-effect text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10'
+                        ? "bg-emerald-500 text-black shadow-lg"
+                        : "glass-effect text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -292,24 +321,29 @@ export const About = () => {
                         className="group relative"
                         initial={{ opacity: 0, scale: 0.8, rotateY: -90 }}
                         animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                        transition={{ 
-                          duration: 0.6, 
+                        transition={{
+                          duration: 0.6,
                           delay: index * 0.1,
                           type: "spring",
-                          stiffness: 100
+                          stiffness: 100,
                         }}
-                        whileHover={{ 
-                          scale: 1.1, 
+                        whileHover={{
+                          scale: 1.1,
                           rotateY: 10,
-                          z: 50
+                          z: 50,
                         }}
                         onMouseEnter={() => setHoveredItem(item.name)}
                         onMouseLeave={() => setHoveredItem(null)}
                       >
                         <div className="relative p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-300 backdrop-blur-sm">
                           {/* Glow effect */}
-                          <div className="absolute inset-0 rounded-xl bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300" style={{background: `linear-gradient(135deg, ${item.color}20, transparent)`}}></div>
-                          
+                          <div
+                            className="absolute inset-0 rounded-xl bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                            style={{
+                              background: `linear-gradient(135deg, ${item.color}20, transparent)`,
+                            }}
+                          ></div>
+
                           {/* Icon */}
                           <div className="flex flex-col items-center space-y-3">
                             <motion.div
@@ -317,23 +351,31 @@ export const About = () => {
                               whileHover={{ rotate: 360 }}
                               transition={{ duration: 0.8 }}
                             >
-                              <div className="absolute inset-0 rounded-full blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-300" style={{backgroundColor: item.color}}></div>
-                              <IconComponent 
-                                size={48} 
+                              <div
+                                className="absolute inset-0 rounded-full blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-300"
+                                style={{ backgroundColor: item.color }}
+                              ></div>
+                              <IconComponent
+                                size={48}
                                 className="relative z-10 transition-all duration-300"
-                                style={{color: hoveredItem === item.name ? item.color : '#6b7280'}}
+                                style={{
+                                  color:
+                                    hoveredItem === item.name
+                                      ? item.color
+                                      : "#6b7280",
+                                }}
                               />
                             </motion.div>
-                            
+
                             {/* Name */}
-                            <motion.span 
+                            <motion.span
                               className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300 text-center"
                               whileHover={{ scale: 1.05 }}
                             >
                               {item.name}
                             </motion.span>
                           </div>
-                          
+
                           {/* Floating tooltip */}
                           <AnimatePresence>
                             {hoveredItem === item.name && (
@@ -370,7 +412,7 @@ export const About = () => {
               <FaCertificate className="inline mr-3" />
               Certifications & Courses
             </motion.h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {certificates.map((cert, index) => (
                 <motion.div
@@ -395,14 +437,14 @@ export const About = () => {
                       {cert.date}
                     </div>
                   </div>
-                  
+
                   {/* Certificate Content */}
                   <div className="p-6">
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
                       {cert.title}
                     </h4>
                     <p className="text-gray-400 mb-4">{cert.issuer}</p>
-                    
+
                     {/* Skills Tags */}
                     <div className="flex flex-wrap gap-2">
                       {cert.skills.map((skill, idx) => (
@@ -431,7 +473,7 @@ export const About = () => {
               <FaTrophy className="inline mr-3" />
               Achievements & Recognition
             </motion.h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {achievements.map((achievement, index) => {
                 const IconComponent = achievement.icon;
@@ -445,8 +487,10 @@ export const About = () => {
                     whileHover={{ y: -5 }}
                   >
                     {/* Background gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                    
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+                    ></div>
+
                     <div className="relative p-6">
                       <div className="flex items-start gap-4">
                         <motion.div
@@ -456,7 +500,7 @@ export const About = () => {
                         >
                           <IconComponent className="text-black" size={24} />
                         </motion.div>
-                        
+
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
@@ -487,8 +531,7 @@ export const About = () => {
                 heading: "B.Sc in Software Engineering",
                 sub: "Islamic University of Technology",
                 period: "2022 – Present",
-                list: [
-                ],
+                list: [],
                 color: "from-blue-400 to-purple-500",
               },
               {
@@ -517,8 +560,10 @@ export const About = () => {
                   whileHover={{ y: -5 }}
                 >
                   {/* Background gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                  
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+                  ></div>
+
                   <div className="relative p-8">
                     <div className="flex items-center gap-4 mb-6">
                       <motion.div
@@ -535,17 +580,19 @@ export const About = () => {
                         <div className="h-1 w-16 bg-gradient-to-r from-emerald-400 to-transparent rounded-full"></div>
                       </div>
                     </div>
-                    
+
                     <div className="mb-4">
                       <h4 className="font-bold text-white text-lg mb-2">
                         {card.heading}
                       </h4>
                       <div className="flex items-center justify-between text-gray-400 text-sm mb-1">
                         <span>{card.sub}</span>
-                        <span className="font-medium text-emerald-400">{card.period}</span>
+                        <span className="font-medium text-emerald-400">
+                          {card.period}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <ul className="space-y-3">
                       {card.list.map((item, idx) => (
                         <motion.li
@@ -553,7 +600,10 @@ export const About = () => {
                           className="flex items-start gap-3 text-gray-200"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.4, delay: i * 0.2 + idx * 0.1 }}
+                          transition={{
+                            duration: 0.4,
+                            delay: i * 0.2 + idx * 0.1,
+                          }}
                         >
                           <motion.div
                             className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"
