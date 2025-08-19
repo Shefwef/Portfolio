@@ -1,7 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaCode, FaEye } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaCode, FaEye, FaChevronLeft, FaChevronRight, FaPlay, FaPause } from "react-icons/fa";
 
 const projects = [
   {
@@ -19,7 +19,8 @@ const projects = [
       "Firebase",
     ],
     link: "https://github.com/Shefwef/ghuroo.git",
-    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop&crop=center",
+    image: "/ghuroo-1.png",
+    landingPageImage: "/ghuroo-2.png",
     category: "Full Stack",
     status: "Completed"
   },
@@ -41,8 +42,9 @@ const projects = [
       "Cloudinary",
     ],
     link: "https://github.com/Shefwef/KrishokBondhu.git",
-    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop&crop=center",
-    category: "AI/ML",
+    image: "/krishokbondhu-1.png",
+    landingPageImage: "/krishokbondhu.png", 
+    category: "AI/ML & Frontend",
     status: "Completed"
   },
   {
@@ -53,8 +55,9 @@ const projects = [
     longDescription: "A decentralized crowdfunding platform built on blockchain technology, featuring smart contracts, secure transactions, and an integrated chatbot for user support.",
     tech: ["Node.js", "JavaScript", "Blockchain", "Solidity", "BotPress"],
     link: "https://github.com/Shefwef/KUET_IntelliJ.git",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop&crop=center",
-    category: "Blockchain",
+    image: "/blockfunder-1.png",
+    landingPageImage: "/blockfunder-2.png",
+    category: "Blockchain & Frontend",
     status: "Completed"
   },
   {
@@ -65,11 +68,27 @@ const projects = [
     longDescription: "A real-time messaging application with secure authentication, instant messaging, and modern chat features built with the MERN stack.",
     tech: ["Socket.IO", "JWT", "Express", "React", "Node.js", "MongoDB"],
     link: "https://github.com/Shefwef/Talkster_Chat-App.git",
-    image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=600&h=400&fit=crop&crop=center",
+    image: "/talkster-1.png",
+    landingPageImage: "/talkster-2.png",
     category: "Full Stack",
     status: "Completed"
   },
+  {
+    id: 5,
+    name: "Shocchokor",
+    description:
+      "Figma-designed blockchain-powered tax redistribution platform enabling transparent, citizen-controlled fund allocation for rural development.",
+    longDescription:
+      "Shocchokor is an award-winning application designed with Figma for the Blockchain Olympiad. Leveraging blockchain, CBDC, and smart contracts, it allows taxpayers and diaspora to allocate taxes directly to vetted rural projects, track progress in real time, and participate in decentralized governance through weighted voting. Core features include fund allocation, project milestone tracking, real-time transparency, E-money wallet integration, and civic rewards. The design focuses on user-friendly interfaces and visual clarity, supporting secure transactions and impactful engagement for socioeconomic development.",
+    tech: ["Figma"],
+    link: "",
+    image: "/Shocchokor-1.png",
+    landingPageImage: "/Shocchokor-2.png",
+    category: "UI/UX",
+    status: "Figma Design"
+  },
 ];
+
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -175,7 +194,7 @@ const ProjectCard = ({ project, index, onSelect }) => {
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group cursor-pointer"
+      className="group cursor-pointer relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onSelect}
@@ -187,7 +206,7 @@ const ProjectCard = ({ project, index, onSelect }) => {
             src={project.image}
             alt={project.name}
             className="w-full h-full object-cover"
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6 }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -212,7 +231,7 @@ const ProjectCard = ({ project, index, onSelect }) => {
               className="text-white text-center"
             >
               <FaEye className="mx-auto mb-2" size={24} />
-              <p className="text-sm font-medium">View Details</p>
+              <p className="text-sm font-medium">View Landing Page</p>
             </motion.div>
           </motion.div>
         </div>
@@ -260,6 +279,81 @@ const ProjectCard = ({ project, index, onSelect }) => {
           </div>
         </div>
       </div>
+
+      {/* Floating Landing Page Preview */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            className="absolute -top-4 -right-4 z-50 pointer-events-none"
+            initial={{ 
+              opacity: 0, 
+              scale: 0.3, 
+              x: 50, 
+              y: 50,
+              rotateY: -15,
+              rotateX: 10
+            }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1, 
+              x: 0, 
+              y: 0,
+              rotateY: 0,
+              rotateX: 0
+            }}
+            exit={{ 
+              opacity: 0, 
+              scale: 0.3, 
+              x: 50, 
+              y: 50,
+              rotateY: -15,
+              rotateX: 10
+            }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 300, 
+              damping: 30,
+              duration: 0.4
+            }}
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <div className="relative">
+              {/* Floating shadow */}
+              <div className="absolute inset-0 bg-black/40 blur-xl transform translate-y-4 scale-105"></div>
+              
+              {/* Landing page preview */}
+              <motion.div
+                className="relative w-80 h-96 rounded-xl overflow-hidden shadow-2xl border-2 border-emerald-500/30"
+                whileHover={{ 
+                  scale: 1.02,
+                  rotateY: 5,
+                  rotateX: -5
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <img
+                  src={project.landingPageImage}
+                  alt={`${project.name} landing page`}
+                  className="w-full h-full object-cover object-top"
+                />
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+                
+                {/* Floating badge */}
+                <div className="absolute top-3 left-3">
+                  <span className="px-3 py-1 text-xs font-bold bg-emerald-500 text-black rounded-full shadow-lg">
+                    Live Preview
+                  </span>
+                </div>
+
+                {/* Glowing border effect */}
+                <div className="absolute inset-0 rounded-xl border-2 border-emerald-400/50 shadow-[0_0_20px_rgba(16,185,129,0.3)]"></div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
