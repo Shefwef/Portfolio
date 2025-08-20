@@ -40,7 +40,7 @@ export const Home = () => {
   useEffect(() => {
     const timeout = setTimeout(
       () => setPhraseIdx((i) => (i + 1) % phrases.length),
-      3000 // slower rotation for better readability
+      3000 
     );
     return () => clearTimeout(timeout);
   }, [phraseIdx]);
@@ -273,25 +273,25 @@ export const Home = () => {
 
       {/* Enhanced scroll down indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-emerald-400 cursor-pointer"
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-emerald-400 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
       >
         <motion.a 
           href="#about" 
-          className="flex flex-col items-center text-sm hover:text-emerald-300 transition-colors group"
-          animate={{ y: [0, 10, 0] }}
+          className="flex flex-col items-center text-xs hover:text-emerald-300 transition-colors group"
+          animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
-          <span className="mb-2 font-medium">Discover More</span>
+          <span className="mb-1 font-medium">Scroll Down</span>
           <motion.div
             className="flex flex-col items-center"
             whileHover={{ scale: 1.1 }}
           >
-            <FaArrowDown className="mb-1" />
+            <FaArrowDown className="mb-1 text-xs" />
             <motion.div 
-              className="w-[2px] h-8 bg-gradient-to-b from-emerald-400 to-transparent rounded-full"
+              className="w-[2px] h-6 bg-gradient-to-b from-emerald-400 to-transparent rounded-full"
               animate={{ scaleY: [1, 1.5, 1] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
             />

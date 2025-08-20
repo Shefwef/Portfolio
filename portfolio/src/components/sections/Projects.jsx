@@ -81,7 +81,7 @@ const projects = [
     longDescription:
       "Shocchokor is an award-winning application designed with Figma for the Blockchain Olympiad. Leveraging blockchain, CBDC, and smart contracts, it allows taxpayers and diaspora to allocate taxes directly to vetted rural projects, track progress in real time, and participate in decentralized governance through weighted voting. Core features include fund allocation, project milestone tracking, real-time transparency, E-money wallet integration, and civic rewards. The design focuses on user-friendly interfaces and visual clarity, supporting secure transactions and impactful engagement for socioeconomic development.",
     tech: ["Figma"],
-    link: "",
+    link: "https://www.figma.com/proto/aA4U2kTpl25rGer5fxpKUn/%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%9A%E0%A7%8D%E0%A6%9B%E0%A6%95%E0%A6%B0?node-id=53-125&starting-point-node-id=53%3A125&t=my1AmWZdWXklXhd9-1",
     image: "/Shocchokor-1.png",
     landingPageImage: "/Shocchokor-2.png",
     category: "UI/UX",
