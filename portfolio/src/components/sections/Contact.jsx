@@ -43,20 +43,20 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-transparent">
+    <section id="contact" className="py-16 sm:py-20 bg-transparent">
       <RevealOnScroll>
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-extrabold mb-10 bg-green-400 bg-clip-text text-transparent text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 sm:mb-10 bg-green-400 bg-clip-text text-transparent text-center">
             Get In Touch
           </h2>
-          <p className="text-gray-300 mb-12 text-center leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-300 mb-8 sm:mb-12 text-center leading-relaxed max-w-2xl mx-auto text-sm sm:text-base px-2">
             Have a question, idea, or opportunity? Let’s talk! Fill out the form
             below, and I’ll get back to you as soon as possible.
           </p>
 
           <form
             onSubmit={handleSubmit}
-            className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl shadow-lg p-8 space-y-6"
+            className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6"
           >
             <input
               type="text"
@@ -65,7 +65,7 @@ export const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-transparent border border-emerald-800/40 rounded-lg text-gray-200 placeholder-gray-500 focus:border-green-400 focus:outline-none transition-colors"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-emerald-800/40 rounded-lg text-gray-200 placeholder-gray-500 focus:border-green-400 focus:outline-none transition-colors text-sm sm:text-base"
             />
             <input
               type="email"
@@ -74,7 +74,7 @@ export const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-transparent border border-emerald-800/40 rounded-lg text-gray-200 placeholder-gray-500 focus:border-green-400 focus:outline-none transition-colors"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-emerald-800/40 rounded-lg text-gray-200 placeholder-gray-500 focus:border-green-400 focus:outline-none transition-colors text-sm sm:text-base"
             />
             <textarea
               name="message"
@@ -83,12 +83,12 @@ export const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-transparent border border-emerald-800/40 rounded-lg text-gray-200 placeholder-gray-500 focus:border-green-400 focus:outline-none transition-colors resize-none"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-emerald-800/40 rounded-lg text-gray-200 placeholder-gray-500 focus:border-green-400 focus:outline-none transition-colors resize-none text-sm sm:text-base"
             ></textarea>
             <button
               type="submit"
               disabled={isSending}
-              className="w-full bg-green-400 text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-300 hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-green-400 text-black font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md hover:bg-green-300 hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
             >
               {isSending ? "Sending..." : "Send Message"}
             </button>

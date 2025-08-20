@@ -48,7 +48,7 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-black via-[#0a0f0a] to-black"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-black via-[#0a0f0a] to-black pt-32"
     >
       {/* Animated background particles */}
       <div className="absolute inset-0">
@@ -74,9 +74,9 @@ export const Home = () => {
       {/* Subtle animated gradient layer */}
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/10 via-transparent to-green-900/10 animate-gradient"></div>
       
-      {/* Floating geometric shapes */}
+      {/* Floating geometric shapes - responsive positioning */}
       <motion.div
-        className="absolute top-20 left-10 w-20 h-20 border border-emerald-500/20 rounded-full"
+        className="absolute top-20 left-4 sm:left-10 w-16 sm:w-20 h-16 sm:h-20 border border-emerald-500/20 rounded-full"
         animate={{
           rotate: 360,
           scale: [1, 1.2, 1],
@@ -87,7 +87,7 @@ export const Home = () => {
         }}
       />
       <motion.div
-        className="absolute bottom-32 right-16 w-16 h-16 bg-gradient-to-br from-emerald-400/10 to-green-600/10 rounded-lg"
+        className="absolute bottom-32 right-4 sm:right-16 w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-emerald-400/10 to-green-600/10 rounded-lg"
         animate={{
           rotate: -360,
           y: [-10, 10, -10],
@@ -100,14 +100,14 @@ export const Home = () => {
 
       <RevealOnScroll>
         <motion.div
-          className="text-center z-10 px-4 max-w-2xl mx-auto pb-12"
+          className="text-center z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pb-12"
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, type: "spring" }}
         >
           <motion.div className="relative mb-6">
             <motion.h1
-              className="text-5xl md:text-7xl font-extrabold mb-4 text-gradient relative z-10"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 text-gradient relative z-10"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 60 }}
@@ -135,7 +135,7 @@ export const Home = () => {
           </motion.div>
 
           {/* Rotating phrases with typing effect */}
-          <div className="h-[34px] md:h-[40px] font-semibold text-emerald-400 text-xl md:text-2xl mb-6 flex items-center justify-center">
+          <div className="h-[28px] sm:h-[32px] md:h-[36px] lg:h-[40px] font-semibold text-emerald-400 text-lg sm:text-xl md:text-2xl mb-6 flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.span
                 key={phraseIdx}
@@ -159,7 +159,7 @@ export const Home = () => {
 
           {/* Intro text */}
           <motion.p 
-            className="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-gray-300 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -177,7 +177,7 @@ export const Home = () => {
 
           {/* Social Icons */}
           <motion.div 
-            className="flex justify-center gap-4 mb-10 flex-wrap"
+            className="flex justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 flex-wrap px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
@@ -222,7 +222,7 @@ export const Home = () => {
 
           {/* Action buttons */}
           <motion.div 
-            className="flex flex-wrap justify-center gap-6 mb-12"
+            className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-8 sm:mb-12 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -230,7 +230,7 @@ export const Home = () => {
             <motion.a
               href="/Shefayats_CV.pdf"
               download
-              className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white py-4 px-8 rounded-full font-semibold shadow-xl overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold shadow-xl overflow-hidden text-sm sm:text-base w-full sm:w-auto"
               whileHover={{ 
                 scale: 1.05, 
                 boxShadow: "0 0 30px rgba(16, 185, 129, 0.4)",
@@ -249,7 +249,7 @@ export const Home = () => {
             
             <motion.a
               href="#projects"
-              className="group relative inline-flex items-center gap-3 border-2 border-emerald-400 text-emerald-300 py-4 px-8 rounded-full font-semibold glass-effect overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-3 border-2 border-emerald-400 text-emerald-300 py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold glass-effect overflow-hidden text-sm sm:text-base w-full sm:w-auto"
               whileHover={{ 
                 scale: 1.05,
                 borderColor: "#10b981",
@@ -308,7 +308,7 @@ const SocialIcon = ({ href, label, Icon, color = "#10b981" }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="group relative p-4 rounded-full glass-effect text-emerald-300 overflow-hidden"
+    className="group relative p-3 sm:p-4 rounded-full glass-effect text-emerald-300 overflow-hidden"
     aria-label={label}
     whileHover={{ 
       scale: 1.2, 

@@ -102,13 +102,13 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen py-20 bg-gradient-to-b from-black via-gray-900/20 to-black relative overflow-hidden"
+      className="min-h-screen py-16 sm:py-20 bg-gradient-to-b from-black via-gray-900/20 to-black relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/10 via-transparent to-transparent"></div>
       
       <RevealOnScroll>
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <motion.div 
             className="text-center mb-16"
@@ -116,10 +116,10 @@ export const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gradient">
               Featured Projects
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-2">
               A collection of projects showcasing my expertise in modern web technologies,
               AI/ML, and blockchain development.
             </p>
@@ -132,12 +132,12 @@ export const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex flex-wrap gap-2 p-2 rounded-full glass-effect">
+            <div className="flex flex-wrap justify-center gap-2 p-2 rounded-full glass-effect">
               {categories.map((category) => (
                 <motion.button
                   key={category}
                   onClick={() => setFilter(category)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                  className={`px-4 sm:px-6 py-2 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
                     filter === category
                       ? 'bg-emerald-500 text-black shadow-lg'
                       : 'text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10'
@@ -153,7 +153,7 @@ export const Projects = () => {
 
           {/* Projects grid */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
             layout
           >
             <AnimatePresence>
@@ -201,7 +201,7 @@ const ProjectCard = ({ project, index, onSelect }) => {
     >
       <div className="relative overflow-hidden rounded-2xl glass-effect hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 h-full">
         {/* Project Image */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-40 sm:h-48 overflow-hidden">
           <motion.img
             src={project.image}
             alt={project.name}
@@ -237,9 +237,9 @@ const ProjectCard = ({ project, index, onSelect }) => {
         </div>
 
         {/* Project Content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-xl font-bold text-emerald-400 group-hover:text-emerald-300 transition-colors">
+            <h3 className="text-lg sm:text-xl font-bold text-emerald-400 group-hover:text-emerald-300 transition-colors">
               {project.name}
             </h3>
             <div className="flex gap-2">
@@ -343,7 +343,7 @@ const ProjectCard = ({ project, index, onSelect }) => {
                 {/* Floating badge */}
                 <div className="absolute top-3 left-3">
                   <span className="px-3 py-1 text-xs font-bold bg-emerald-500 text-black rounded-full shadow-lg">
-                    Live Preview
+                    Preview
                   </span>
                 </div>
 
