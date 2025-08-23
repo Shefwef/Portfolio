@@ -27,9 +27,9 @@ import {
   FaCogs,
   FaPaintBrush,
   FaLaptopCode,
-  FaMicrochip,
   FaRocket,
   FaShieldAlt,
+  FaMicrochip,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -46,6 +46,7 @@ import {
   SiFigma,
   SiWordpress,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
 const skills = [
   {
@@ -58,7 +59,7 @@ const skills = [
       { name: "TypeScript", icon: SiTypescript, color: "#3178c6" },
       { name: "Java", icon: FaJava, color: "#ed8b00" },
       { name: "C++", icon: FaCode, color: "#00599c" },
-      { name: "C#", icon: FaMicrochip, color: "#239120" },
+      { name: "C#", icon: TbBrandCSharp, color: "#9179E4" },
       { name: "Solidity", icon: FaShieldAlt, color: "#363636" },
       { name: "HTML5", icon: SiHtml5, color: "#e34f26" },
       { name: "CSS3", icon: SiCss3, color: "#1572b6" },
@@ -443,7 +444,9 @@ export const About = () => {
                     <h4 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
                       {cert.title}
                     </h4>
-                    <p className="text-sm sm:text-base text-gray-400 mb-4">{cert.issuer}</p>
+                    <p className="text-sm sm:text-base text-gray-400 mb-4">
+                      {cert.issuer}
+                    </p>
 
                     {/* Skills Tags */}
                     <div className="flex flex-wrap gap-2">
@@ -488,14 +491,14 @@ export const About = () => {
                   >
                     {/* Background gradient */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+                      className={`absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 opacity-5 group-hover:opacity-20 transition-opacity duration-300`}
                     ></div>
 
                     <div className="relative p-4 sm:p-6">
                       <div className="flex items-start gap-4">
                         <motion.div
-                          className={`p-3 rounded-full bg-gradient-to-r ${achievement.color} flex-shrink-0`}
-                          whileHover={{ rotate: 360, scale: 1.1 }}
+                          className="p-3 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 flex-shrink-0"
+                          whileHover={{ rotate: 360, scale: 1.15 }}
                           transition={{ duration: 0.6 }}
                         >
                           <IconComponent className="text-black" size={24} />
@@ -561,14 +564,14 @@ export const About = () => {
                 >
                   {/* Background gradient */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+                    className={`absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 opacity-5 group-hover:opacity-20 transition-opacity duration-300`}
                   ></div>
 
                   <div className="relative p-4 sm:p-6 lg:p-8">
                     <div className="flex items-center gap-4 mb-6">
                       <motion.div
-                        className={`p-3 rounded-full bg-gradient-to-r ${card.color}`}
-                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        className="p-3 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500"
+                        whileHover={{ rotate: 360, scale: 1.15 }}
                         transition={{ duration: 0.6 }}
                       >
                         <IconComponent className="text-black" size={24} />
